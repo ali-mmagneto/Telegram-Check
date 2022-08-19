@@ -1,6 +1,5 @@
-import re
-import asyncio
 import time
+import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from config import API_ID, API_HASH, SESSION_STRING, TEXT, USERNAME
@@ -18,7 +17,7 @@ async def function(client, message, text):
          chat = await client.create_channel("Hayırlı olsun", "Channel Description")
          await client.set_chat_username(chat.id, username)
        else:
-         print("Başaramadım abi")
+         print("Başaramadım abi.")
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
