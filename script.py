@@ -12,16 +12,14 @@ async def function(client, message, text):
     try:
        messages = await message.reply(text)
        check_text = messages.reply_to_message.text
-       x = re.search("Sorry", check_text)
+       x = re.match("Sorry", check_text)
        if x:
          pass
        else:
          await client.send_message(USERNAME, text)
-         try:
-            chat = await client.create_channel("Hayırlı olsun", "Channel Description")
-            await client.set_chat_username(chat.id, text)
-         except:
-             pass
+         username = text.replace('@', '')
+         chat = await client.create_channel("Hayırlı olsun", "Channel Description")
+         await client.set_chat_username(chat.id, username)
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
@@ -29,7 +27,6 @@ async def function(client, message, text):
        
 @app.on_message(filters.private)
 async def check(client, message):
-    text = TEXT.replace('@', '')
     await function(client, message, text)
 
 app.run()
