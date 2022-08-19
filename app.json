@@ -1,7 +1,6 @@
 {
     "name": "Checker",
     "description": "Telegram Username",
-    "stack": "container",
     "keywords": [
       "telegram",
       "pyrogram"
@@ -29,7 +28,6 @@
             "required": true
         }
     },
-    "addons": [],
     "buildpacks": [{
         "url": "heroku/python"
     }],
