@@ -6,6 +6,7 @@
       "telegram",
       "pyrogram"
     ],
+    "repository": "https://github.com/trelicon/Telegram-Check",
     "env": {
         "SESSION_STRING": {
             "description": "https://replit.com/@ZauteKm/generate-pyrogram-session-string adresinden alın.",
