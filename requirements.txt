@@ -1,0 +1,2 @@
+tgcrypto
+git+https://github.com/pyrogram/pyrogram@master

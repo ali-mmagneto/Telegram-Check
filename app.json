@@ -1,0 +1,41 @@
+{
+    "name": "Checker",
+    "description": "Telegram Username",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "pyrogram"
+    ],
+    "env": {
+        "SESSION_STRING": {
+            "description": "https://replit.com/@ZauteKm/generate-pyrogram-session-string adresinden alın.",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Bu değeri https://my.telegram.org adresinden alın.",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Bu değeri https://my.telegram.org adresinden alın.",
+            "required": true
+        },
+		"TEXT": {
+            "description": "Alınmak istenen kullanıcı adı.",
+            "required": true
+        },
+		"USERNAME": {
+            "description": "Kullanıcı adı alındığında size mesaj göndermek için kullanıcı adınız.",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
