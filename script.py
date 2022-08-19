@@ -14,7 +14,7 @@ async def function(client, message, text):
        check_text = messages.reply_to_message.text
        x = re.match("Sorry", check_text)
        if x:
-         pass
+         print(x)
        else:
          await client.send_message(USERNAME, text)
          username = text.replace('@', '')
@@ -23,7 +23,6 @@ async def function(client, message, text):
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
-    print(x)
        
 @app.on_message(filters.private)
 async def check(client, message):
