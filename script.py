@@ -26,6 +26,7 @@ async def function(client, message, text):
        
 @app.on_message(filters.private)
 async def check(client, message):
-    await function(client, message, TEXT)
+    text = TEXT.replace('@', '')
+    await function(client, message, text)
 
 app.run()
