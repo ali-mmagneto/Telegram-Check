@@ -17,8 +17,11 @@ async def function(client, message, text):
          pass
        else:
          await client.send_message(USERNAME, text)
-         chat = await client.create_channel("Hayırlı olsun", "Channel Description")
-         await client.set_chat_username(chat.id, text)
+         try:
+            chat = await client.create_channel("Hayırlı olsun", "Channel Description")
+            await client.set_chat_username(chat.id, text)
+         except:
+             pass
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
