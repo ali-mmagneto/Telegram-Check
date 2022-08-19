@@ -12,14 +12,13 @@ async def function(client, message, text):
     try:
        messages = await message.reply(text)
        check_text = messages.reply_to_message.text
-       x = re.match("settings", check_text)
-       if x:
+       if "settings" in check_text:
          await client.send_message(USERNAME, text)
          username = text.replace('@', '')
          chat = await client.create_channel("Hayırlı olsun", "Channel Description")
          await client.set_chat_username(chat.id, username)
        else:
-         print(x)
+         print("Başaramadım abi")
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
