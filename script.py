@@ -18,6 +18,7 @@ async def function(client, message, text):
          await client.set_chat_username(chat.id, username)
        else:
          print("Başaramadım abi.")
+         print("neyi başaramadın amınakoduhum") 
     except FloodWait as e:
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
