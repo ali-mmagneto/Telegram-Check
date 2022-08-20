@@ -7,7 +7,7 @@ from config import API_ID, API_HASH, SESSION_STRING, TEXT, USERNAME
 app = Client("my_account", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
 
 async def function(client, message, text):
-    time.sleep(6)
+    time.sleep(3)
     try:
        messages = await message.reply(text)
        check_text = messages.reply_to_message.text
