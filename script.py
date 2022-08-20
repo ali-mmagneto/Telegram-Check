@@ -22,7 +22,7 @@ async def function(client, message, text):
        print(f"Sleep of {e.value} required by FloodWait ...")
        time.sleep(e.value)
        
-@app.on_message(filters.private)
+@app.on_message(filters.private & ~filters.bot)
 async def check(client, message):
     await function(client, message, TEXT)
 
